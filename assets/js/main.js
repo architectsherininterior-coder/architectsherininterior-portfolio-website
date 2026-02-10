@@ -1,3 +1,6 @@
+
+
+
 (function ($) {
     "use strict";
     /*=================================
@@ -66,17 +69,17 @@
     /*---------- 03. Mobile Menu ----------*/
     $.fn.thmobilemenu = function (options) {
         var opt = $.extend({
-                menuToggleBtn: ".th-menu-toggle",
-                bodyToggleClass: "th-body-visible",
-                subMenuClass: "th-submenu",
-                subMenuParent: "menu-item-has-children",
-                thSubMenuParent: "th-item-has-children",
-                subMenuParentToggle: "th-active",
-                meanExpandClass: "th-mean-expand",
-                // appendElement: '<span class="th-mean-expand"></span>',
-                subMenuToggleClass: "th-open",
-                toggleSpeed: 400,
-            },
+            menuToggleBtn: ".th-menu-toggle",
+            bodyToggleClass: "th-body-visible",
+            subMenuClass: "th-submenu",
+            subMenuParent: "menu-item-has-children",
+            thSubMenuParent: "th-item-has-children",
+            subMenuParentToggle: "th-active",
+            meanExpandClass: "th-mean-expand",
+            // appendElement: '<span class="th-mean-expand"></span>',
+            subMenuToggleClass: "th-open",
+            toggleSpeed: 400,
+        },
             options
         );
 
@@ -321,9 +324,9 @@
     /*-------------- 08. Slider Tab -------------*/
     $.fn.activateSliderThumbs = function (options) {
         var opt = $.extend({
-                sliderTab: false,
-                tabButton: ".tab-btn",
-            },
+            sliderTab: false,
+            tabButton: ".tab-btn",
+        },
             options
         );
 
@@ -401,20 +404,20 @@
             tabButton: ".tab-btn",
         });
     }
-   
+
     if ($(".testi-thumb").length) {
         $(".testi-thumb").activateSliderThumbs({
             sliderTab: true,
             tabButton: ".tab-btn",
         });
     }
-    if ($(".testi-thumb2").length) { 
+    if ($(".testi-thumb2").length) {
         $(".testi-thumb2").activateSliderThumbs({
             sliderTab: true,
-            tabButton: ".tab-btn", 
+            tabButton: ".tab-btn",
         });
     }
-   
+
 
 
     /*----------- 08. Ajax Contact Form ----------*/
@@ -488,8 +491,8 @@
         if (
             !$($email).val() ||
             !$($email)
-            .val()
-            .match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)
+                .val()
+                .match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)
         ) {
             $($email).addClass(invalidCls);
             valid = false;
@@ -615,61 +618,61 @@
         });
     }
 
-   
-       /************lettering js***********/
-       function injector(t, splitter, klass, after) {
-		var a = t.text().split(splitter), inject = '';
-		if (a.length) {
-			$(a).each(function(i, item) {
-				inject += '<span class="'+klass+(i+1)+'">'+item+'</span>'+after;
-			});	
-			t.empty().append(inject);
-		}
-	}
-	
-	var methods = {
-		init : function() {
 
-			return this.each(function() {
-				injector($(this), '', 'char', '');
-			});
+    /************lettering js***********/
+    function injector(t, splitter, klass, after) {
+        var a = t.text().split(splitter), inject = '';
+        if (a.length) {
+            $(a).each(function (i, item) {
+                inject += '<span class="' + klass + (i + 1) + '">' + item + '</span>' + after;
+            });
+            t.empty().append(inject);
+        }
+    }
 
-		},
+    var methods = {
+        init: function () {
 
-		words : function() {
+            return this.each(function () {
+                injector($(this), '', 'char', '');
+            });
 
-			return this.each(function() {
-				injector($(this), ' ', 'word', ' ');
-			});
+        },
 
-		},
-		
-		lines : function() {
+        words: function () {
 
-			return this.each(function() {
-				var r = "eefec303079ad17405c889e092e105b0";
-				// Because it's hard to split a <br/> tag consistently across browsers,
-				// (*ahem* IE *ahem*), we replaces all <br/> instances with an md5 hash 
-				// (of the word "split").  If you're trying to use this plugin on that 
-				// md5 hash string, it will fail because you're being ridiculous.
-				injector($(this).children("br").replaceWith(r).end(), r, 'line', '');
-			});
+            return this.each(function () {
+                injector($(this), ' ', 'word', ' ');
+            });
 
-		}
-	};
+        },
 
-    $.fn.lettering = function( method ) {
-		// Method calling logic
-		if ( method && methods[method] ) {
-			return methods[ method ].apply( this, [].slice.call( arguments, 1 ));
-		} else if ( method === 'letters' || ! method ) {
-			return methods.init.apply( this, [].slice.call( arguments, 0 ) ); // always pass an array
-		}
-		$.error( 'Method ' +  method + ' does not exist on jQuery.lettering' );
-		return this;
-	};
+        lines: function () {
 
-    $(".about-anime").lettering();  
+            return this.each(function () {
+                var r = "eefec303079ad17405c889e092e105b0";
+                // Because it's hard to split a <br/> tag consistently across browsers,
+                // (*ahem* IE *ahem*), we replaces all <br/> instances with an md5 hash 
+                // (of the word "split").  If you're trying to use this plugin on that 
+                // md5 hash string, it will fail because you're being ridiculous.
+                injector($(this).children("br").replaceWith(r).end(), r, 'line', '');
+            });
+
+        }
+    };
+
+    $.fn.lettering = function (method) {
+        // Method calling logic
+        if (method && methods[method]) {
+            return methods[method].apply(this, [].slice.call(arguments, 1));
+        } else if (method === 'letters' || !method) {
+            return methods.init.apply(this, [].slice.call(arguments, 0)); // always pass an array
+        }
+        $.error('Method ' + method + ' does not exist on jQuery.lettering');
+        return this;
+    };
+
+    $(".about-anime").lettering();
 
     /*---------- 12. Section Position ----------*/
     // Interger Converter
@@ -1039,11 +1042,11 @@
     //      centeredSlides: true,
     //       speed: 600,
     //       loop: true,
-       
+
     // });
 
 
- 
+
 
     var galleryThumbs = new Swiper('.gallery-thumbs', {
         loop: true,
@@ -1055,26 +1058,26 @@
         slidesPerView: 3,
         watchSlidesVisibility: true,
         watchSlidesProgress: true,
-      });
-      
-      var galleryTop = new Swiper('.gallery-top', {
+    });
+
+    var galleryTop = new Swiper('.gallery-top', {
         loop: true,
         autoplay: false,
         loopedSlides: 1,
         slidesPerView: 1,
-        spaceBetween: 10, 
+        spaceBetween: 10,
         navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
         },
-      
-     
-      });
-      
-      
-      // ALTERNATIVE SOLUTION to get the active thumb centered, it doesn't work on Safari if sliding backwards
-      galleryTop.controller.control = galleryThumbs;
-      galleryThumbs.controller.control = galleryTop;
+
+
+    });
+
+
+    // ALTERNATIVE SOLUTION to get the active thumb centered, it doesn't work on Safari if sliding backwards
+    galleryTop.controller.control = galleryThumbs;
+    galleryThumbs.controller.control = galleryTop;
 
     //   serviceAccordion 
 
@@ -1084,7 +1087,7 @@
         $('.th-accordion_images img').eq(activeIndex).addClass('active');
     });
 
-  
+
 
     /*----------- 00. Woocommerce Toggle ----------*/
     // Ship To Different Address
@@ -1162,10 +1165,10 @@
     });
 
 
-    /* mouse cursor */  
+    /* mouse cursor */
 
-    var cursor = document.querySelector('.cursor'); 
-    var cursorinner = document.querySelector('.cursor2'); 
+    var cursor = document.querySelector('.cursor');
+    var cursorinner = document.querySelector('.cursor2');
     var a = document.querySelectorAll('a');
 
     document.addEventListener('mousemove', function (e) {
@@ -1219,6 +1222,7 @@
     $(document).on('click', '.switchIcon', function () {
         $('.color-scheme-wrap').toggleClass('active');
     });
+
 
 
 
