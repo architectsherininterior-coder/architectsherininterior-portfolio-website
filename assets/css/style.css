@@ -23550,6 +23550,11 @@ span.select2-selection.select2-selection--single:focus {
   z-index: 2;
 }
 
+.project-item-content .gallery-btn.custom-pos {
+  top: 8% !important;
+  right: 4% !important;
+}
+
 .project-item-img img {
   width: 100%;
   height: 100%;
@@ -26929,14 +26934,14 @@ body.popup-active {
 
 .loginPopup h2 {
   margin-bottom: 6px;
-    font-size: 26px;
+  font-size: 26px;
 }
 
 .subtitle {
- font-size: 16px;
-    font-weight: 500;
-    color: #333;
-    margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 20px;
 }
 
 .loginPopup input {
@@ -26979,9 +26984,10 @@ body.popup-active {
   }
 }
 
-.popup_image{
+.popup_image {
   border-top-left-radius: 12px;
   border-bottom-left-radius: 12px;
   height: 100% !important;
 }
+
 /*# sourceMappingURL=style.css.map */

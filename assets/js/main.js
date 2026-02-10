@@ -603,6 +603,19 @@
         midClick: true,
     });
 
+    $('a.btn-gallery').on('click', function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        var gallery = $(this).attr('href'); // Get the href (ID of the hidden gallery)
+
+        $(gallery).magnificPopup({
+            delegate: 'a', // Child items selector, by clicking on it popup will open
+            type: 'image',
+            gallery: {
+                enabled: true // Enable gallery mode
+            }
+        }).magnificPopup('open'); // Open the popup
+    });
+
     function content_ready_scripts() {
         const boxes = gsap.utils.toArray('.global-image');
         boxes.forEach(img => {
