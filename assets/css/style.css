@@ -15415,7 +15415,11 @@ span.select2-selection.select2-selection--single:focus {
     text-align: center;
   }
 }
-
+@media (max-width: 1199px) {
+  .img-box3 .img1 img {
+    width: 100%;
+  }
+}
 .about-item {
   background-color: var(--smoke-color);
   padding: 30px;
